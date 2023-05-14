@@ -124,9 +124,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 # python pip
 export PATH=$PATH:$HOME/.local/bin
-export ITERM_PROFILE=dark
-export ISA=x86
-export ARCH=native
+
 
 # User defined alias
 alias vi='nvim'
