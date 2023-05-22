@@ -21,7 +21,6 @@ set foldmethod=syntax
 set foldcolumn=0
 setlocal foldlevel=1
 set foldnestmax=2
-set cursorline
 
 " wrap
 set wrap
@@ -43,10 +42,7 @@ set timeoutlen=1000 ttimeoutlen=0
 
 filetype plugin on
 
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
-
-set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ Ln\ %l,\ Col\ %c/%L%)
+set colorcolumn=
 
 let mapleader = " "
 
@@ -85,6 +81,7 @@ nnoremap Z <Nop>
 nnoremap ZZ <Nop>
 nnoremap ) <Nop>
 nnoremap 9 $
+nnoremap . <Nop>
 
 " parenthesis
 inoremap (<tab> ()<Esc>i
@@ -94,9 +91,13 @@ inoremap [<tab> []<Esc>i
 inoremap '<tab> ''<Esc>i
 inoremap "<tab> ""<Esc>i
 
-" C runtime
-nnoremap <F5> :!runc %<CR>
-nnoremap <F8> :!cat %<CR>
+inoremap jf <Esc>
+
+" editor 
+nnoremap ,, :w<CR>
+nnoremap .. :wq<CR>
+nnoremap <tab> .
+nnoremap J G
 
 " Local Customization
 source ~/.vimrc.local
