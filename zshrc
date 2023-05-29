@@ -146,7 +146,6 @@ alias ,host="cat /etc/hosts"
 alias ,packer="cd ~/.local/share/nvim/site/pack/packer/start"
 alias ,cmake="cmake -S .. -B ."
 alias ,log="git lg | head -n 10"
-alias ,tmux="tmex xv6 12 \"echo hello\" \"echo os\" \"echo world\""
 alias ,snip="vi ~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets/c.json"
 
 function mcd() {
