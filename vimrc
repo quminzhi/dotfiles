@@ -39,6 +39,7 @@ set timeoutlen=1000 ttimeoutlen=0
 
 filetype plugin on
 
+colorscheme retrobox 
 set colorcolumn=
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
