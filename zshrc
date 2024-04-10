@@ -127,8 +127,14 @@ alias ls="ls -G"
 alias ,ip="ipconfig getifaddr en0"
 alias ,gitconfig="vi ~/.gitconfig"
 
+# Create a directory and jump into it
 function mcd() {
   mkdir $1 && cd $1;
+}
+
+# Open a file with vim in read-only mode
+function vir() {
+  vi -R $1
 }
 
 LINUX_MAN_PATH=$HOME/Documents/.Man/linux-man
