@@ -137,6 +137,11 @@ function vir() {
   vi -R $1
 }
 
+# Change directory and list file
+function cdl() {
+  cd $1 && ls -l
+}
+
 LINUX_MAN_PATH=$HOME/Documents/.Man/linux-man
 # linux manpage
 function lman() {
