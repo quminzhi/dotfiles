@@ -121,7 +121,7 @@ alias ..="cd ../"
 alias ...="cd ../../"
 alias ..l="cd ../ && ll"
 alias ~="cd ~"
-alias ll="ls -alhG"
+alias ll="ls -alhGt"
 alias ls="ls -G"
 
 alias ,ip="ipconfig getifaddr en0"

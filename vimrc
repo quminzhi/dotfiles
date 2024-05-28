@@ -39,7 +39,6 @@ set timeoutlen=1000 ttimeoutlen=0
 
 filetype plugin on
 
-colorscheme retrobox 
 set colorcolumn=
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
@@ -57,6 +56,7 @@ nnoremap H ^
 xnoremap L $ 
 nnoremap L $
 nnoremap U <c-r>
+nnoremap rr <c-t>
 nnoremap <c-j> <c-d>
 nnoremap <c-k> <c-u>
 
