@@ -11,7 +11,7 @@ set autochdir
 set backupcopy=yes
 set magic
 set cmdheight=1
-set laststatus=2
+set laststatus=1
 set nofoldenable
 set foldmethod=syntax
 set foldcolumn=0
