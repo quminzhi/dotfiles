@@ -42,6 +42,17 @@ filetype plugin on
 set colorcolumn=
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
+" clear status line
+set statusline=
+
+" enable auto completion menu after pressing TAB.
+set wildmenu
+" make wildmenu behave like similar to Bash completion.
+set wildmode=list:longest
+" there are certain files that we would never want to edit with Vim.
+" wildmenu will ignore files with these extensions.
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
 " stop mapping for some keys
 nnoremap Z <Nop>
 nnoremap ZZ <Nop>
