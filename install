@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+# install does:
+# - configure vimrc, gitignore, gitconfig, tmux
+# - install fish theme with omf
+# - install ctrlp plugin
+# - install dracula vim colorscheme
+
+# Define the array of configuration files and their target directories
+config_files=("vimrc" "gitignore" "gitconfig" "tmux")
+
+# Check if the .config directory exists, if not, create it
+if [ ! -d "$HOME/.config" ]; then
+    echo ".config directory does not exist, creating it..."
+    mkdir -p "$HOME/.config"
+else
+    echo ".config directory exists, proceeding..."
+fi
+
+# Create the necessary subdirectories under .config
+for dir in "${config_files[@]}"; do
+    mkdir -p "$HOME/.config/$dir"
+done
+
+# Loop through the config files array
+for file in "${config_files[@]}"; do
+    target="$HOME/.config/$file/$file"
+    if [ -e "$target" ]; then
+        echo "Symlink or file $target already exists, skipping..."
+    else
+        # Check if the corresponding file exists in the current directory
+        if [ -f "./$file" ]; then
+            ln -s "$PWD/$file" "$target"
+            echo "Created symlink for $file"
+        else
+            echo "$file file not found in the current directory"
+        fi
+    fi
+done
+
+# Create soft link at HOME directory
+for file in "${config_files[@]}"; do
+    target="$HOME/.$file"
+    if [ -e "$target" ]; then
+        echo "Symlink or file already exists for $file, skipping..."
+    else
+        ln -s "$PWD/$file" "$HOME/.$file"
+    fi
+done
+# Adjust for tmux config
+mv "$HOME/.tmux" "$HOME/.tmux.conf"
+
+# Installed omf theme if omf exist
+omf_dir="$HOME/.local/share/omf"
+target_dir="$omf_dir/themes/fshthm"
+if [ -d $omf_dir ]; then
+    if [ -d "$target_dir" ]; then
+        echo "fshthm already exists: $target_dir"
+    else
+        cp -r "./themes/fshthm" "$target_dir"
+    fi
+else
+    echo "Oh My Fish is not installed."
+fi
+
+# Install ctrlp Plugin
+# .vim/pack/plugins/start
+plugin_dir="$HOME/.vim/pack/plugins/start"
+mkdir -p $plugin_dir
+if [ -d $plugin_dir/ctrlp ]; then
+  echo "ctrlp already there, skipping..." 
+else 
+  cp -r "$HOME/.dotfiles/vim/ctrlp" "$plugin_dir/ctrlp"
+fi
+
+# Install Dracula colorscheme for vim
+theme_dir="$HOME/.vim/pack/themes/start"
+mkdir -p $theme_dir
+
+if [ -n "$TERM_APP" ]; then
+  if [ -d $theme_dir/dracula ]; then
+    echo "dracula already there, skipping..." 
+  else 
+    cp -r "$HOME/.dotfiles/vim/dracula" "$theme_dir/dracula"
+  fi
+else
+  echo "TERM_APP is not set, do nothing..."
+fi
+

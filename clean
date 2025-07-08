@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+config_files=("vimrc" "gitignore" "gitconfig" "tmux")
+
+for file in "${config_files[@]}"; do
+  if [ -e "$file" ]; then
+    rm -rf "$HOME/.config/$file"
+    rm -rf "$HOME/.$file"
+  fi
+done
+
+# Remove tmux config
+if [ -e "tmux.conf" ]; then
+  rm -rf "$HOME/.tmux.conf"
+fi
