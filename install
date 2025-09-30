@@ -6,7 +6,7 @@
 # - install dracula vim colorscheme
 
 # Define the array of configuration files and their target directories
-config_files=("vimrc" "gitignore" "gitconfig" "tmux")
+config_files=("vimrc" "gitignore" "gitconfig" "tmux" "clang-format")
 
 # Check if the .config directory exists, if not, create it
 if [ ! -d "$HOME/.config" ]; then
