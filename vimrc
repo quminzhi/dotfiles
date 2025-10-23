@@ -189,3 +189,16 @@ nnoremap [e :echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
 " Disable some error-checking
 autocmd FileType c,cpp hi link cErrInBracket NONE
 autocmd FileType c,cpp hi link cErrInParen NONE
+
+" Plugin: Please install vim plugin first
+" curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+"   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-commentary'
+call plug#end()
+
+" Optional: Ctrl-/ to toggle comments
+nmap <C-_> gcc
+xmap <C-_> gc
+nnoremap <silent> <Leader>/ :Commentary<CR>
+xnoremap <silent> <Leader>/ :Commentary<CR>
