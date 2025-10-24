@@ -90,7 +90,8 @@ nnoremap H ^
 xnoremap H ^
 nnoremap L $
 xnoremap L $
-nnoremap U <C-r>  " Redo
+" Redo
+nnoremap U <C-r>
 nnoremap <Leader>n :nohlsearch<CR>
 nnoremap , `
 
