@@ -3,10 +3,10 @@ Language:        Cpp
 # BasedOnStyle:  Google
 AccessModifierOffset: -1
 AlignAfterOpenBracket: Align
-AlignArrayOfStructures: None
-AlignConsecutiveMacros: None
-AlignConsecutiveAssignments: None
-AlignConsecutiveBitFields: None
+AlignArrayOfStructures: Left
+AlignConsecutiveMacros: AcrossEmptyLinesAndComments
+AlignConsecutiveAssignments: AcrossEmptyLinesAndComments
+AlignConsecutiveBitFields: AcrossEmptyLinesAndComments
 AlignConsecutiveDeclarations: None
 AlignEscapedNewlines: Left
 AlignOperands:   Align
